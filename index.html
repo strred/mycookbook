@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receptfüzet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E7; --paper-2:#EFE7D7; --ink:#23201C; --ink-soft:#5D564B;
+    --herb:#33503F; --herb-deep:#24382C; --honey:#D89A2E; --honey-soft:#F3E4C2;
+    --berry:#7A3B52; --rule:rgba(35,32,28,.14); --spine:var(--herb);
+  }
+  *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.6;font-optical-sizing:auto;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header.masthead{padding:56px 0 28px;border-bottom:2px solid var(--ink)}
+  .mast-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .wordmark{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+    font-size:clamp(2.6rem,8vw,4.6rem);line-height:.92;letter-spacing:-.02em;margin:0;
+    color:var(--herb-deep);cursor:pointer;background:none;border:0;text-align:left;padding:0;}
+  .wordmark:focus-visible{outline:3px solid var(--honey);outline-offset:4px}
+  .mast-right{display:flex;align-items:center;gap:18px;padding-bottom:.4em}
+  .mast-count{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.95rem;color:var(--ink-soft);white-space:nowrap}
+  .edit-link{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.9rem;
+    color:var(--herb);text-decoration:none;border:1.5px solid var(--herb);border-radius:2px;padding:6px 12px}
+  .edit-link:hover{background:var(--herb);color:var(--paper)}
+  .tagline{margin:14px 0 0;max-width:52ch;color:var(--ink-soft);font-size:1.05rem}
+  .controls{padding:26px 0 8px}
+  .search{display:flex;align-items:center;gap:12px;border:1.5px solid var(--ink);
+    background:var(--paper);border-radius:2px;padding:12px 16px;max-width:440px;}
+  .search svg{flex:none;stroke:var(--ink-soft)}
+  .search input{border:0;background:none;outline:none;width:100%;font-family:"Newsreader",serif;font-size:1.05rem;color:var(--ink);}
+  .search input::placeholder{color:var(--ink-soft);opacity:.75}
+  .tagbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tagfilter{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;
+    background:none;color:var(--ink-soft);border:1.5px solid var(--rule);border-radius:100px;padding:5px 14px;cursor:pointer;}
+  .tagfilter[aria-pressed="true"]{background:var(--herb);color:var(--paper);border-color:var(--herb)}
+  .tagfilter:focus-visible{outline:2.5px solid var(--honey);outline-offset:2px}
+  main{padding:8px 0 80px}
+  .index{list-style:none;margin:20px 0 0;padding:0}
+  .card{display:flex;gap:18px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;cursor:pointer;
+    padding:24px 20px 24px 24px;border-top:1px solid var(--rule);border-left:5px solid var(--spine);font-family:inherit;color:inherit;}
+  .index li:last-child .card{border-bottom:1px solid var(--rule)}
+  .card:hover{background:var(--paper-2)}
+  .card:focus-visible{outline:3px solid var(--honey);outline-offset:-3px}
+  .card-txt{flex:1;min-width:0}
+  .card h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(1.35rem,3.3vw,1.8rem);
+    line-height:1.08;letter-spacing:-.01em;margin:0;color:var(--herb-deep);}
+  .card p.desc{margin:8px 0 0;color:var(--ink-soft);max-width:60ch}
+  .card .meta{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;align-items:center}
+  .card .thumb{flex:none;width:88px;height:88px;object-fit:cover;border-radius:3px;border:1px solid var(--rule);background:var(--paper-2)}
+  .card .playtag{flex:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.72rem;color:var(--ink-soft);display:inline-flex;align-items:center;gap:4px}
+  .chip{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.78rem;color:var(--spine);display:inline-flex;align-items:center;gap:6px;}
+  .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--spine)}
+  .card .servings{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.78rem;color:var(--ink-soft);margin-left:auto;}
+  .empty{padding:60px 4px;color:var(--ink-soft);max-width:52ch}
+  .empty strong{color:var(--ink);font-weight:500}
+  .empty a{color:var(--herb)}
+  .detail{display:none;padding:20px 0 90px}
+  .back{display:inline-flex;align-items:center;gap:8px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.9rem;
+    background:none;border:0;color:var(--ink);cursor:pointer;padding:8px 0;margin:8px 0 26px;}
+  .back:hover{color:var(--herb)}
+  .back:focus-visible{outline:2.5px solid var(--honey);outline-offset:3px}
+  .detail-head{border-left:6px solid var(--spine);padding-left:20px;margin-bottom:8px}
+  .detail h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2rem,6vw,3.2rem);
+    line-height:1;letter-spacing:-.02em;margin:0;color:var(--herb-deep);}
+  .detail .lede{margin:16px 0 0;font-size:1.18rem;max-width:62ch;color:var(--ink)}
+  .detail-meta{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:20px;padding-left:20px}
+  .detail-meta .chip{font-size:.82rem}
+  .source{margin-top:18px;padding-left:20px;font-size:.92rem;color:var(--ink-soft)}
+  .source a{color:var(--herb);text-underline-offset:3px}
+  .hero{width:100%;aspect-ratio:16/10;object-fit:cover;border:1.5px solid var(--ink);border-radius:3px;margin-top:28px;display:block;}
+  .video-embed{position:relative;aspect-ratio:16/9;border:1.5px solid var(--ink);border-radius:3px;overflow:hidden;margin-top:28px;background:#000;}
+  .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-file{margin-top:28px}
+  .video-file video{width:100%;max-height:74vh;border:1.5px solid var(--ink);border-radius:3px;background:#000;display:block}
+  .video-link{margin-top:24px;display:inline-flex;align-items:center;gap:9px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.95rem;
+    background:var(--herb);color:var(--paper);border-radius:2px;padding:11px 20px;text-decoration:none;}
+  .video-link:hover{background:var(--herb-deep)}
+  .body-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:52px;margin-top:44px;align-items:start;}
+  .section-label{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.15rem;color:var(--herb);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--rule);}
+  .ing-panel{background:var(--paper-2);border-radius:3px;padding:26px 26px 30px;position:sticky;top:20px}
+  .ing-group + .ing-group{margin-top:22px}
+  .ing-group h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.9rem;color:var(--berry);margin:0 0 8px;}
+  .ing-panel ul{list-style:none;margin:0;padding:0}
+  .ing-panel li{padding:7px 0 7px 22px;position:relative;border-bottom:1px solid var(--rule);font-size:1rem;line-height:1.45;}
+  .ing-panel li:last-child{border-bottom:0}
+  .ing-panel li::before{content:"";position:absolute;left:2px;top:.85em;width:9px;height:1.5px;background:var(--honey)}
+  ol.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+  ol.steps li{counter-increment:step;position:relative;padding:0 0 26px 58px;margin:0}
+  ol.steps li:not(:last-child){border-left:1.5px solid var(--rule);margin-left:16px;padding-left:42px}
+  ol.steps li::before{content:counter(step);position:absolute;left:0;top:-4px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1rem;
+    width:33px;height:33px;border-radius:50%;background:var(--herb);color:var(--paper);display:flex;align-items:center;justify-content:center;}
+  ol.steps li:not(:last-child)::before{left:-17px}
+  ol.steps li p{margin:2px 0 0}
+  .note{margin-top:30px;background:var(--honey-soft);border-radius:3px;padding:20px 22px;font-size:.98rem;line-height:1.55;}
+  .note b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--herb-deep);display:block;margin-bottom:4px;font-size:.9rem;}
+  .jegyzet{margin-top:52px;border-top:2px solid var(--ink);padding-top:30px}
+  .jegyzet .section-label{border:0;padding:0}
+  .jegyzet-txt{max-width:66ch;margin-top:6px}
+  .jegyzet-txt p{margin:0 0 1em}.jegyzet-txt p:last-child{margin-bottom:0}
+  .gallery{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;border:1px solid var(--rule)}
+  footer{border-top:2px solid var(--ink);padding:26px 0 60px;color:var(--ink-soft);font-size:.9rem}
+  footer .wordmark-sm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--herb-deep);font-size:1.1rem}
+  @media(max-width:760px){
+    body{font-size:17px}.wrap{padding:0 18px}header.masthead{padding:38px 0 22px}
+    .body-grid{grid-template-columns:1fr;gap:40px}.ing-panel{position:static}
+    .card .thumb{width:70px;height:70px}.card .servings{margin-left:0}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .view-enter{animation:fade .28s ease both}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="mast-top">
+      <button class="wordmark" id="home-link" aria-label="Vissza a receptek listájához">Receptfüzet</button>
+      <div class="mast-right">
+        <span class="mast-count" id="count"></span>
+        <a class="edit-link" href="szerkeszto.html">Szerkesztő</a>
+      </div>
+    </div>
+    <p class="tagline">Kimentett receptek egy helyen — átírva magyarra, elolvasható mennyiségekkel és lépésekkel.</p>
+  </header>
+  <div id="list-view">
+    <div class="controls">
+      <label class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="search" placeholder="Keresés recept vagy hozzávaló szerint…" autocomplete="off" aria-label="Keresés">
+      </label>
+      <div class="tagbar" id="tagbar" role="group" aria-label="Szűrés címke szerint"></div>
+    </div>
+    <main><ul class="index" id="index"></ul><div class="empty" id="empty" hidden></div></main>
+  </div>
+  <div class="detail" id="detail-view" aria-live="polite"></div>
+  <footer><span class="wordmark-sm">Receptfüzet</span> · saját gyűjtemény</footer>
+</div>
+
+<script src="recipes.js"></script>
+<script>
+const RECEPTEK = (window.RECEPTEK || []);
+const SZINEK = {"vegetáriánus":"#33503F","köret":"#B0752A","édesburgonya":"#B26A3A",
+  "gluténmentes":"#4B6B57","desszert":"#7A3B52","leves":"#516A86","reggeli":"#8A6D2F"};
+const szinehez=t=>SZINEK[t]||"#33503F";
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function formaz(txt){return txt.split(/\n\s*\n/).map(p=>"<p>"+esc(p).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\n/g,"<br>")+"</p>").join("")}
+function videoBlokk(v){
+  if(!v) return "";
+  const yt=v.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  if(yt) return `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${yt[1]}" title="Videó" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  const vi=v.match(/vimeo\.com\/(\d+)/);
+  if(vi) return `<div class="video-embed"><iframe src="https://player.vimeo.com/video/${vi[1]}" title="Videó" allowfullscreen loading="lazy"></iframe></div>`;
+  if(/\.(mp4|webm|ogg)(\?|#|$)/i.test(v)) return `<div class="video-file"><video controls preload="metadata" src="${esc(v)}"></video></div>`;
+  return `<a class="video-link" href="${esc(v)}" target="_blank" rel="noopener">▶ Videó megtekintése</a>`;
+}
+let aktivCimke=null, kereso="";
+const $index=document.getElementById("index"),$empty=document.getElementById("empty"),$count=document.getElementById("count"),
+  $tagbar=document.getElementById("tagbar"),$search=document.getElementById("search"),
+  $listView=document.getElementById("list-view"),$detailView=document.getElementById("detail-view");
+RECEPTEK.forEach((r,i)=>r._id=i);
+const osszesCimke=[...new Set(RECEPTEK.flatMap(r=>r.cimkek||[]))];
+osszesCimke.forEach(t=>{
+  const b=document.createElement("button");b.className="tagfilter";b.textContent=t;b.setAttribute("aria-pressed","false");
+  b.onclick=()=>{aktivCimke=aktivCimke===t?null:t;[...$tagbar.children].forEach(c=>c.setAttribute("aria-pressed",c.textContent===aktivCimke));render();};
+  $tagbar.appendChild(b);
+});
+function szurt(){
+  const q=kereso.trim().toLowerCase();
+  return RECEPTEK.filter(r=>{
+    if(aktivCimke && !(r.cimkek||[]).includes(aktivCimke)) return false;
+    if(!q) return true;
+    const heap=(r.cim+" "+r.leiras+" "+(r.cimkek||[]).join(" ")+" "+(r.hozzavalok||[]).flatMap(g=>g.tetelek).join(" ")+" "+(r.szoveg||"")).toLowerCase();
+    return heap.includes(q);
+  });
+}
+function render(){
+  const lista=szurt();
+  $count.textContent=RECEPTEK.length+" recept";
+  $index.innerHTML="";
+  if(!RECEPTEK.length){
+    $empty.hidden=false;
+    $empty.innerHTML=`Még nincs recept, vagy a <code>recipes.js</code> nem töltődött be. Nyisd meg a <a href="szerkeszto.html">Szerkesztőt</a>, és adj hozzá egyet.`;
+    return;
+  }
+  if(!lista.length){
+    $empty.hidden=false;
+    $empty.innerHTML=`Erre nincs találat: <strong>${esc(kereso||aktivCimke||"")}</strong>. Töröld a keresést, vagy adj hozzá egy új receptet a Szerkesztőben.`;
+    return;
+  }
+  $empty.hidden=true;
+  lista.forEach(r=>{
+    const spine=szinehez((r.cimkek||[])[0]);
+    const li=document.createElement("li");const b=document.createElement("button");
+    b.className="card";b.style.setProperty("--spine",spine);
+    const thumb=r.kep?`<img class="thumb" src="${esc(r.kep)}" alt="" loading="lazy">`:"";
+    b.innerHTML=`<div class="card-txt"><h2>${esc(r.cim)}</h2><p class="desc">${esc(r.leiras)}</p>
+      <div class="meta">${(r.cimkek||[]).map(t=>`<span class="chip" style="--spine:${szinehez(t)}">${esc(t)}</span>`).join("")}
+      ${r.video?`<span class="playtag">▶ videó</span>`:""}${r.adag?`<span class="servings">${esc(r.adag)}</span>`:""}</div></div>${thumb}`;
+    b.onclick=()=>megnyit(r._id);li.appendChild(b);$index.appendChild(li);
+  });
+}
+function megnyit(id){
+  const r=RECEPTEK.find(x=>x._id===id);const spine=szinehez((r.cimkek||[])[0]);
+  $detailView.style.setProperty("--spine",spine);
+  const media=r.kep?`<img class="hero" src="${esc(r.kep)}" alt="${esc(r.cim)}">`:"";
+  const galeria=(r.galeria&&r.galeria.length)?`<div class="gallery">${r.galeria.map(g=>`<img src="${esc(g)}" alt="" loading="lazy">`).join("")}</div>`:"";
+  $detailView.innerHTML=`
+    <button class="back" id="back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>Minden recept</button>
+    <div class="detail-head"><h1>${esc(r.cim)}</h1></div>
+    <p class="lede">${esc(r.leiras)}</p>
+    <div class="detail-meta">${(r.cimkek||[]).map(t=>`<span class="chip" style="--spine:${szinehez(t)}">${esc(t)}</span>`).join("")}
+      ${r.adag?`<span class="chip" style="--spine:var(--ink-soft)">${esc(r.adag)}</span>`:""}</div>
+    ${r.forras?`<p class="source">Forrás: ${r.forrasUrl?`<a href="${esc(r.forrasUrl)}" target="_blank" rel="noopener">${esc(r.forras)}</a>`:esc(r.forras)}</p>`:""}
+    ${media}${videoBlokk(r.video)}
+    <div class="body-grid">
+      <div><h3 class="section-label">Hozzávalók</h3><div class="ing-panel">
+        ${(r.hozzavalok||[]).map(g=>`<div class="ing-group">${g.csoport?`<h4>${esc(g.csoport)}</h4>`:""}<ul>${g.tetelek.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`).join("")}
+      </div></div>
+      <div><h3 class="section-label">Elkészítés</h3><ol class="steps">${(r.lepesek||[]).map(s=>`<li><p>${esc(s)}</p></li>`).join("")}</ol>
+        ${r.megjegyzes?`<div class="note"><b>Megjegyzés</b>${esc(r.megjegyzes)}</div>`:""}</div>
+    </div>${galeria}
+    ${r.szoveg?`<div class="jegyzet"><h3 class="section-label">Jegyzetek</h3><div class="jegyzet-txt">${formaz(r.szoveg)}</div></div>`:""}`;
+  document.getElementById("back").onclick=zar;
+  $listView.style.display="none";$detailView.style.display="block";
+  $detailView.classList.remove("view-enter");void $detailView.offsetWidth;$detailView.classList.add("view-enter");
+  window.scrollTo(0,0);
+  history.pushState({id},"","#"+encodeURIComponent(r.cim.toLowerCase().replace(/\s+/g,"-")));
+}
+function zar(){$detailView.style.display="none";$listView.style.display="block";window.scrollTo(0,0);if(location.hash)history.pushState({},"",location.pathname);}
+document.getElementById("home-link").onclick=zar;
+$search.addEventListener("input",e=>{kereso=e.target.value;render();});
+window.addEventListener("popstate",e=>{if(e.state&&e.state.id!=null)megnyit(e.state.id);else zar();});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receptfüzet — Szerkesztő</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F6F1E7;--paper-2:#EFE7D7;--ink:#23201C;--ink-soft:#5D564B;--herb:#33503F;
+    --herb-deep:#24382C;--honey:#D89A2E;--honey-soft:#F3E4C2;--berry:#7A3B52;--rule:rgba(35,32,28,.14);
+    --danger:#8F3A2E;--ok:#3B6B4A;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:16px;line-height:1.5}
+  .bar{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:2px solid var(--ink);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 20px}
+  .bar h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.3rem;margin:0;color:var(--herb-deep)}
+  .bar a.home{margin-left:auto;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;
+    color:var(--herb);text-decoration:none;border:1.5px solid var(--herb);border-radius:2px;padding:6px 12px}
+  .bar a.home:hover{background:var(--herb);color:var(--paper)}
+  .layout{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .pane{padding:22px;min-width:0}
+  .pane.form{border-right:2px solid var(--ink)}
+  .pane.preview{background:var(--paper-2);position:sticky;top:59px;height:calc(100vh - 59px);overflow:auto}
+  .reclist{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .reclist button{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.82rem;cursor:pointer;
+    background:none;color:var(--ink-soft);border:1.5px solid var(--rule);border-radius:100px;padding:5px 13px}
+  .reclist button.active{background:var(--herb);color:var(--paper);border-color:var(--herb)}
+  .reclist button.new{color:var(--herb);border-color:var(--herb);border-style:dashed}
+  label.f{display:block;margin:0 0 14px}
+  label.f > span{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.8rem;
+    color:var(--herb);margin-bottom:5px}
+  input.t,textarea.t{width:100%;font-family:"Newsreader",serif;font-size:1rem;color:var(--ink);background:var(--paper);
+    border:1.5px solid var(--rule);border-radius:3px;padding:9px 11px}
+  input.t:focus,textarea.t:focus{outline:none;border-color:var(--herb)}
+  textarea.t{resize:vertical;min-height:64px;line-height:1.45}
+  .hint{font-size:.8rem;color:var(--ink-soft);margin:4px 0 0}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  fieldset{border:1.5px solid var(--rule);border-radius:4px;padding:14px;margin:0 0 16px}
+  legend{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.85rem;color:var(--herb-deep);padding:0 6px}
+  .grp{border:1px solid var(--rule);border-radius:4px;padding:12px;margin-bottom:10px;background:var(--paper)}
+  .grp .grp-del,.mini{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.76rem;cursor:pointer;
+    background:none;border:1.5px solid var(--rule);border-radius:2px;padding:5px 10px;color:var(--ink-soft)}
+  .grp .grp-del{color:var(--danger);border-color:var(--danger);margin-top:8px}
+  .addbtn{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.82rem;cursor:pointer;
+    background:none;border:1.5px dashed var(--herb);color:var(--herb);border-radius:3px;padding:7px 14px}
+  .actions{position:sticky;bottom:0;background:var(--paper);border-top:2px solid var(--ink);
+    margin:22px -22px -22px;padding:14px 22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .btn{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;border:0;border-radius:3px;padding:11px 18px}
+  .btn.primary{background:var(--herb);color:var(--paper)}.btn.primary:hover{background:var(--herb-deep)}
+  .btn.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink)}
+  .btn.del{background:none;border:1.5px solid var(--danger);color:var(--danger);margin-left:auto}
+  details.gh{margin-top:16px;border:1.5px solid var(--rule);border-radius:4px;padding:0 14px}
+  details.gh summary{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.9rem;color:var(--herb-deep);cursor:pointer;padding:12px 0}
+  details.gh[open]{padding-bottom:14px}
+  .warn{background:var(--honey-soft);border-radius:3px;padding:10px 12px;font-size:.82rem;margin:0 0 12px}
+  .status{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;padding:4px 0}
+  .status.ok{color:var(--ok)}.status.err{color:var(--danger)}
+
+  /* preview styles (kivonat az oldaléból) */
+  .pv h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.8rem;line-height:1.05;color:var(--herb-deep);margin:0 0 6px}
+  .pv .lede{color:var(--ink);margin:0 0 12px}
+  .pv .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .pv .chip{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.75rem;color:var(--herb);display:inline-flex;align-items:center;gap:5px}
+  .pv .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--herb)}
+  .pv img.hero{width:100%;aspect-ratio:16/10;object-fit:cover;border:1.5px solid var(--ink);border-radius:3px;margin:6px 0 14px}
+  .pv .video-embed{position:relative;aspect-ratio:16/9;border:1.5px solid var(--ink);border-radius:3px;overflow:hidden;margin:6px 0 14px;background:#000}
+  .pv .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .pv video{width:100%;border:1.5px solid var(--ink);border-radius:3px;margin:6px 0 14px;background:#000}
+  .pv .vlink{display:inline-block;background:var(--herb);color:var(--paper);text-decoration:none;border-radius:2px;padding:8px 14px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;margin:6px 0 14px}
+  .pv .lab{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--herb);font-size:1rem;border-bottom:2px solid var(--rule);padding-bottom:6px;margin:18px 0 10px}
+  .pv .ing{background:var(--paper);border-radius:3px;padding:14px 16px;border:1px solid var(--rule)}
+  .pv .ing h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.82rem;color:var(--berry);margin:0 0 6px}
+  .pv .ing ul{list-style:none;margin:0 0 10px;padding:0}
+  .pv .ing li{padding:5px 0 5px 18px;position:relative;border-bottom:1px solid var(--rule);font-size:.95rem}
+  .pv .ing li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1.5px;background:var(--honey)}
+  .pv ol{margin:0;padding-left:22px}.pv ol li{margin-bottom:10px}
+  .pv .note{background:var(--honey-soft);border-radius:3px;padding:12px 14px;font-size:.9rem;margin-top:12px}
+  .pv .jz{border-top:2px solid var(--ink);margin-top:20px;padding-top:14px}
+  .pv .jz p{margin:0 0 .8em}
+  @media(max-width:860px){
+    .layout{grid-template-columns:1fr}
+    .pane.form{border-right:0;border-bottom:2px solid var(--ink)}
+    .pane.preview{position:static;height:auto}
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>Szerkesztő</h1>
+  <a class="home" href="index.html">← Vissza az oldalra</a>
+</div>
+
+<div class="layout">
+  <!-- FORM -->
+  <div class="pane form">
+    <div class="reclist" id="reclist"></div>
+
+    <label class="f"><span>Cím</span><input class="t" id="f-cim" placeholder="A recept címe"></label>
+    <label class="f"><span>Rövid leírás</span><input class="t" id="f-leiras" placeholder="Egy mondat a listához"></label>
+    <div class="row2">
+      <label class="f"><span>Címkék (vesszővel)</span><input class="t" id="f-cimkek" placeholder="vegetáriánus, köret"></label>
+      <label class="f"><span>Adag</span><input class="t" id="f-adag" placeholder="4 adag"></label>
+    </div>
+    <div class="row2">
+      <label class="f"><span>Forrás (opcionális)</span><input class="t" id="f-forras" placeholder="@fiok"></label>
+      <label class="f"><span>Forrás link (opcionális)</span><input class="t" id="f-forrasUrl" placeholder="https://..."></label>
+    </div>
+
+    <fieldset>
+      <legend>Kép & videó</legend>
+      <label class="f"><span>Kép elérési útja vagy URL</span><input class="t" id="f-kep" placeholder="media/kep.jpg">
+        <p class="hint">Töltsd fel a képet a repo <code>media/</code> mappájába, ide a fájlnevet írd. Vagy használd lent a GitHub-feltöltést.</p></label>
+      <label class="f"><span>Videó (YouTube/Vimeo link, media/klip.mp4, vagy IG/TikTok link)</span><input class="t" id="f-video" placeholder="https://youtu.be/..."></label>
+      <label class="f"><span>Galéria (egy kép-URL soronként)</span><textarea class="t" id="f-galeria" placeholder="media/1.jpg&#10;media/2.jpg"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Hozzávalók</legend>
+      <div id="groups"></div>
+      <button class="addbtn" id="add-group" type="button">+ Csoport hozzáadása</button>
+    </fieldset>
+
+    <label class="f"><span>Elkészítés (egy lépés soronként)</span><textarea class="t" id="f-lepesek" style="min-height:140px" placeholder="Első lépés.&#10;Második lépés."></textarea></label>
+    <label class="f"><span>Megjegyzés (mézszínű doboz, opcionális)</span><textarea class="t" id="f-megjegyzes" placeholder="Rövid tipp"></textarea></label>
+    <label class="f"><span>Jegyzetek — szabad szöveg (opcionális)</span><textarea class="t" id="f-szoveg" style="min-height:100px" placeholder="Üres sor = új bekezdés, **így** lesz félkövér."></textarea></label>
+
+    <details class="gh">
+      <summary>Közzététel GitHubra (opcionális, egygombos)</summary>
+      <div class="warn">A token csak a te böngésződben tárolódik (localStorage), sosem kerül a repóba. Használj <b>fine-grained</b> tokent, csak erre a repóra, „Contents: Read and write” jogosultsággal. Bármikor visszavonhatod a GitHubon.</div>
+      <div class="row2">
+        <label class="f"><span>GitHub felhasználónév</span><input class="t" id="gh-owner" placeholder="felhasznalonev"></label>
+        <label class="f"><span>Repo neve</span><input class="t" id="gh-repo" placeholder="receptfuzet"></label>
+      </div>
+      <div class="row2">
+        <label class="f"><span>Branch</span><input class="t" id="gh-branch" placeholder="main" value="main"></label>
+        <label class="f"><span>Token</span><input class="t" id="gh-token" type="password" placeholder="github_pat_..."></label>
+      </div>
+      <label class="f"><span>Kép feltöltése a repóba (media/)</span><input class="t" id="gh-imgfile" type="file" accept="image/*"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="mini" id="gh-save-token" type="button">Beállítások mentése</button>
+        <button class="mini" id="gh-forget" type="button">Token törlése</button>
+        <button class="btn primary" id="gh-publish" type="button">Közzététel GitHubra</button>
+      </div>
+      <div class="status" id="gh-status"></div>
+    </details>
+
+    <div class="actions">
+      <button class="btn primary" id="download" type="button">Letöltés (recipes.js)</button>
+      <button class="btn ghost" id="copy" type="button">Másolás vágólapra</button>
+      <button class="btn del" id="delete" type="button">Recept törlése</button>
+    </div>
+    <div class="status" id="status" style="padding:10px 0 40px"></div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="pane preview"><div class="pv" id="preview"></div></div>
+</div>
+
+<script src="recipes.js"></script>
+<script>
+const SZINEK={"vegetáriánus":"#33503F","köret":"#B0752A","édesburgonya":"#B26A3A","gluténmentes":"#4B6B57","desszert":"#7A3B52","leves":"#516A86","reggeli":"#8A6D2F"};
+const szin=t=>SZINEK[t]||"#33503F";
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function formaz(t){return t.split(/\n\s*\n/).map(p=>"<p>"+esc(p).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\n/g,"<br>")+"</p>").join("")}
+function videoBlokk(v){
+  if(!v)return"";
+  const yt=v.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  if(yt)return `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${yt[1]}" allowfullscreen></iframe></div>`;
+  const vi=v.match(/vimeo\.com\/(\d+)/);
+  if(vi)return `<div class="video-embed"><iframe src="https://player.vimeo.com/video/${vi[1]}" allowfullscreen></iframe></div>`;
+  if(/\.(mp4|webm|ogg)(\?|#|$)/i.test(v))return `<video controls preload="metadata" src="${esc(v)}"></video>`;
+  return `<a class="vlink" href="${esc(v)}" target="_blank" rel="noopener">▶ Videó megtekintése</a>`;
+}
+
+let receptek = (window.RECEPTEK||[]).map(r=>JSON.parse(JSON.stringify(r)));
+let jelenlegi = receptek.length?0:-1;
+
+const $=id=>document.getElementById(id);
+const F={cim:$("f-cim"),leiras:$("f-leiras"),cimkek:$("f-cimkek"),adag:$("f-adag"),
+  forras:$("f-forras"),forrasUrl:$("f-forrasUrl"),kep:$("f-kep"),video:$("f-video"),
+  galeria:$("f-galeria"),lepesek:$("f-lepesek"),megjegyzes:$("f-megjegyzes"),szoveg:$("f-szoveg")};
+
+function ujRecept(){return{cim:"Új recept",leiras:"",cimkek:[],adag:"",forras:"",forrasUrl:"",
+  kep:"",video:"",galeria:[],hozzavalok:[{csoport:"",tetelek:[]}],lepesek:[],megjegyzes:"",szoveg:""};}
+
+function reclistRajz(){
+  const el=$("reclist");el.innerHTML="";
+  receptek.forEach((r,i)=>{
+    const b=document.createElement("button");b.textContent=r.cim||"(névtelen)";
+    if(i===jelenlegi)b.className="active";
+    b.onclick=()=>{gyujtEsMent();jelenlegi=i;betolt();};el.appendChild(b);
+  });
+  const nb=document.createElement("button");nb.textContent="+ Új recept";nb.className="new";
+  nb.onclick=()=>{gyujtEsMent();receptek.push(ujRecept());jelenlegi=receptek.length-1;betolt();};
+  el.appendChild(nb);
+}
+
+function csoportNode(g){
+  const d=document.createElement("div");d.className="grp";
+  d.innerHTML=`<label class="f"><span>Csoport neve</span><input class="t grp-cim" placeholder="pl. A szószhoz"></label>
+    <label class="f" style="margin:0"><span>Hozzávalók (egy soronként)</span><textarea class="t grp-tetelek" placeholder="1 ek olaj&#10;só, ízlés szerint"></textarea></label>
+    <button class="grp-del" type="button">Csoport törlése</button>`;
+  d.querySelector(".grp-cim").value=g.csoport||"";
+  d.querySelector(".grp-tetelek").value=(g.tetelek||[]).join("\n");
+  d.querySelector(".grp-del").onclick=()=>{d.remove();elonezet();};
+  d.querySelectorAll(".t").forEach(i=>i.addEventListener("input",elonezet));
+  return d;
+}
+
+function betolt(){
+  if(jelenlegi<0){receptek.push(ujRecept());jelenlegi=0;}
+  const r=receptek[jelenlegi];
+  F.cim.value=r.cim||"";F.leiras.value=r.leiras||"";F.cimkek.value=(r.cimkek||[]).join(", ");
+  F.adag.value=r.adag||"";F.forras.value=r.forras||"";F.forrasUrl.value=r.forrasUrl||"";
+  F.kep.value=r.kep||"";F.video.value=r.video||"";F.galeria.value=(r.galeria||[]).join("\n");
+  F.lepesek.value=(r.lepesek||[]).join("\n");F.megjegyzes.value=r.megjegyzes||"";F.szoveg.value=r.szoveg||"";
+  const gc=$("groups");gc.innerHTML="";
+  (r.hozzavalok&&r.hozzavalok.length?r.hozzavalok:[{csoport:"",tetelek:[]}]).forEach(g=>gc.appendChild(csoportNode(g)));
+  reclistRajz();elonezet();
+}
+
+function gyujt(){
+  const sorok=t=>t.value.split("\n").map(s=>s.trim()).filter(Boolean);
+  const groups=[...document.querySelectorAll("#groups .grp")].map(d=>({
+    csoport:d.querySelector(".grp-cim").value.trim(),
+    tetelek:d.querySelector(".grp-tetelek").value.split("\n").map(s=>s.trim()).filter(Boolean)
+  })).filter(g=>g.csoport||g.tetelek.length);
+  return{
+    cim:F.cim.value.trim(),leiras:F.leiras.value.trim(),
+    cimkek:F.cimkek.value.split(",").map(s=>s.trim()).filter(Boolean),
+    adag:F.adag.value.trim(),forras:F.forras.value.trim(),forrasUrl:F.forrasUrl.value.trim(),
+    kep:F.kep.value.trim(),video:F.video.value.trim(),
+    galeria:sorok(F.galeria),hozzavalok:groups,lepesek:sorok(F.lepesek),
+    megjegyzes:F.megjegyzes.value.trim(),szoveg:F.szoveg.value
+  };
+}
+function gyujtEsMent(){if(jelenlegi>=0)receptek[jelenlegi]=gyujt();}
+
+function elonezet(){
+  const r=gyujt();if(jelenlegi>=0)receptek[jelenlegi]=r;
+  const c=szin((r.cimkek||[])[0]);
+  const gal=(r.galeria&&r.galeria.length)?`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-top:12px">${r.galeria.map(g=>`<img src="${esc(g)}" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;border:1px solid var(--rule)">`).join("")}</div>`:"";
+  $("preview").innerHTML=`
+    <h2 style="color:${c}">${esc(r.cim)||"(cím)"}</h2>
+    <p class="lede">${esc(r.leiras)}</p>
+    <div class="chips">${(r.cimkek||[]).map(t=>`<span class="chip" style="color:${szin(t)}">${esc(t)}</span>`).join("")}${r.adag?`<span class="chip" style="color:var(--ink-soft)">${esc(r.adag)}</span>`:""}</div>
+    ${r.forras?`<p style="font-size:.85rem;color:var(--ink-soft)">Forrás: ${esc(r.forras)}</p>`:""}
+    ${r.kep?`<img class="hero" src="${esc(r.kep)}" alt="">`:""}
+    ${videoBlokk(r.video)}
+    <div class="lab">Hozzávalók</div>
+    <div class="ing">${(r.hozzavalok||[]).map(g=>`${g.csoport?`<h4>${esc(g.csoport)}</h4>`:""}<ul>${(g.tetelek||[]).map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`).join("")||"<p style='color:var(--ink-soft)'>—</p>"}</div>
+    <div class="lab">Elkészítés</div>
+    <ol>${(r.lepesek||[]).map(s=>`<li>${esc(s)}</li>`).join("")||"<li style='color:var(--ink-soft)'>—</li>"}</ol>
+    ${r.megjegyzes?`<div class="note"><b>Megjegyzés</b><br>${esc(r.megjegyzes)}</div>`:""}
+    ${gal}
+    ${r.szoveg?`<div class="jz"><div class="lab" style="border:0;padding:0">Jegyzetek</div>${formaz(r.szoveg)}</div>`:""}`;
+}
+
+/* ---- serialize ---- */
+function fajlTartalom(){
+  gyujtEsMent();
+  const tiszta=receptek.map(r=>({cim:r.cim,leiras:r.leiras,cimkek:r.cimkek,adag:r.adag,
+    forras:r.forras,forrasUrl:r.forrasUrl,kep:r.kep,video:r.video,galeria:r.galeria,
+    hozzavalok:r.hozzavalok,lepesek:r.lepesek,megjegyzes:r.megjegyzes,szoveg:r.szoveg}));
+  return "/* A receptgyűjtemény tartalma. Ezt a fájlt a szerkesztő is írja. */\nwindow.RECEPTEK = "+JSON.stringify(tiszta,null,2)+";\n";
+}
+function letolt(){
+  const blob=new Blob([fajlTartalom()],{type:"text/javascript"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="recipes.js";a.click();
+  URL.revokeObjectURL(a.href);
+  allapot($("status"),"Letöltve: recipes.js — töltsd fel a repóba (Add file → Upload files → Commit).","ok");
+}
+async function masol(){
+  try{await navigator.clipboard.writeText(fajlTartalom());allapot($("status"),"Vágólapra másolva a recipes.js teljes tartalma.","ok");}
+  catch(e){allapot($("status"),"Nem sikerült a másolás — használd a Letöltés gombot.","err");}
+}
+function torol(){
+  if(jelenlegi<0)return;
+  if(!confirm("Biztosan törlöd ezt a receptet a szerkesztőből?"))return;
+  receptek.splice(jelenlegi,1);jelenlegi=receptek.length?0:-1;betolt();
+  allapot($("status"),"Recept törölve. A törlés csak akkor lép életbe az oldalon, ha letöltöd/közzéteszed a recipes.js-t.","ok");
+}
+function allapot(el,msg,t){el.textContent=msg;el.className="status "+(t||"");}
+
+/* ---- GitHub ---- */
+const GHKEY="receptfuzet_gh";
+function ghBetolt(){
+  try{const s=JSON.parse(localStorage.getItem(GHKEY)||"{}");
+    if(s.owner)$("gh-owner").value=s.owner;if(s.repo)$("gh-repo").value=s.repo;
+    if(s.branch)$("gh-branch").value=s.branch;if(s.token)$("gh-token").value=s.token;}catch(e){}
+}
+function ghMent(){
+  localStorage.setItem(GHKEY,JSON.stringify({owner:$("gh-owner").value.trim(),repo:$("gh-repo").value.trim(),
+    branch:($("gh-branch").value.trim()||"main"),token:$("gh-token").value.trim()}));
+  allapot($("gh-status"),"Beállítások mentve ebben a böngészőben.","ok");
+}
+function ghFelejt(){$("gh-token").value="";const s=JSON.parse(localStorage.getItem(GHKEY)||"{}");delete s.token;
+  localStorage.setItem(GHKEY,JSON.stringify(s));allapot($("gh-status"),"Token törölve a böngészőből.","ok");}
+function ghAdatok(){return{owner:$("gh-owner").value.trim(),repo:$("gh-repo").value.trim(),
+  branch:$("gh-branch").value.trim()||"main",token:$("gh-token").value.trim()};}
+function b64(str){return btoa(unescape(encodeURIComponent(str)));}
+async function ghSha(g,path){
+  const r=await fetch(`https://api.github.com/repos/${g.owner}/${g.repo}/contents/${encodeURIComponent(path)}?ref=${g.branch}`,
+    {headers:{Authorization:"Bearer "+g.token,Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"}});
+  if(r.status===404)return null;
+  if(!r.ok)throw new Error("Nem érem el a fájlt ("+r.status+"). Ellenőrizd a repót és a tokent.");
+  return (await r.json()).sha;
+}
+async function ghPut(g,path,contentB64,message){
+  const sha=await ghSha(g,path);
+  const body={message,content:contentB64,branch:g.branch};if(sha)body.sha=sha;
+  const r=await fetch(`https://api.github.com/repos/${g.owner}/${g.repo}/contents/${encodeURIComponent(path)}`,
+    {method:"PUT",headers:{Authorization:"Bearer "+g.token,Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"},body:JSON.stringify(body)});
+  if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.message||("Hiba: "+r.status));}
+  return r.json();
+}
+async function ghKozzetesz(){
+  const g=ghAdatok();
+  if(!g.owner||!g.repo||!g.token){allapot($("gh-status"),"Töltsd ki a felhasználónevet, repót és a tokent.","err");return;}
+  ghMent();allapot($("gh-status"),"Feltöltés…","");
+  try{
+    const f=$("gh-imgfile").files[0];
+    if(f){
+      const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(f);});
+      const base=dataUrl.split(",")[1];
+      const nev="media/"+f.name.replace(/[^\w.\-]/g,"_");
+      await ghPut(g,nev,base,"Kép feltöltése: "+nev);
+      F.kep.value=nev;elonezet();$("gh-imgfile").value="";
+      allapot($("gh-status"),"Kép feltöltve ("+nev+"). Most a recipes.js következik…","");
+    }
+    await ghPut(g,"recipes.js",b64(fajlTartalom()),"Receptek frissítése a szerkesztőből");
+    allapot($("gh-status"),"Kész! Közzétéve. Az oldal ~1 perc múlva frissül.","ok");
+  }catch(e){allapot($("gh-status"),"Hiba: "+e.message,"err");}
+}
+
+/* ---- események ---- */
+Object.values(F).forEach(el=>el.addEventListener("input",()=>{elonezet();
+  if(el===F.cim)reclistRajz();}));
+$("add-group").onclick=()=>{$("groups").appendChild(csoportNode({csoport:"",tetelek:[]}));};
+$("download").onclick=letolt;$("copy").onclick=masol;$("delete").onclick=torol;
+$("gh-save-token").onclick=ghMent;$("gh-forget").onclick=ghFelejt;$("gh-publish").onclick=ghKozzetesz;
+
+ghBetolt();betolt();
+</script>
+</body>
+</html>
