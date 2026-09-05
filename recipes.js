@@ -12,7 +12,7 @@ window.RECEPTEK = [
     "forras": "",
     "forrasUrl": "",
     "kep": "",
-    "video": "https://www.instagram.com/reels/audio/27446636658357490?igsi=MXB2NzRjZWVza3k0dg==",
+    "video": "https://www.instagram.com/p/DZAmiDtN6bz/",
     "galeria": [],
     "hozzavalok": [
       {
