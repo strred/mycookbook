@@ -1,27 +1,48 @@
-/* A receptgyűjtemény tartalma. Ezt a fájlt a szerkesztő (szerkeszto.html) is írja.
-   Kézzel is bővíthető: adj egy új objektumot a listához. */
+/* A receptgyűjtemény tartalma. Ezt a fájlt a szerkesztő is írja. */
 window.RECEPTEK = [
   {
     "cim": "Sült édesburgonya fokhagymás tahini szósszal",
     "leiras": "Ropogósra sült édesburgonya krémes, citromos-fokhagymás tahini öntettel meglocsolva.",
-    "cimkek": ["vegetáriánus", "köret", "édesburgonya"],
+    "cimkek": [
+      "vegetáriánus",
+      "köret",
+      "édesburgonya"
+    ],
     "adag": "kb. 4 adag",
     "forras": "",
     "forrasUrl": "",
     "kep": "",
-    "video": "",
+    "video": "https://www.instagram.com/reels/audio/27446636658357490?igsi=MXB2NzRjZWVza3k0dg==",
     "galeria": [],
     "hozzavalok": [
-      { "csoport": "Az édesburgonyához", "tetelek": [
-        "4 közepes vagy 3 nagy édesburgonya", "3 ek olaj", "1 ek füstölt paprika",
-        "¾ tk finom tengeri só", "¼ tk őrölt fekete bors", "1 tk fokhagymapor", "1 tk hagymapor"
-      ]},
-      { "csoport": "A fokhagymás tahini szószhoz", "tetelek": [
-        "¼ csésze tahini", "1 ek olívaolaj", "2 ek juharszirup vagy méz", "¼ csésze víz",
-        "1 ek aprított petrezselyem (elhagyható)", "füstölt paprika (ízlés szerint)",
-        "fokhagymapor (ízlés szerint)", "hagymapor (ízlés szerint)", "1 citrom reszelt héja",
-        "2 ek citromlé", "¼ tk só"
-      ]}
+      {
+        "csoport": "Az édesburgonyához",
+        "tetelek": [
+          "4 közepes vagy 3 nagy édesburgonya",
+          "3 ek olaj",
+          "1 ek füstölt paprika",
+          "¾ tk finom tengeri só",
+          "¼ tk őrölt fekete bors",
+          "1 tk fokhagymapor",
+          "1 tk hagymapor"
+        ]
+      },
+      {
+        "csoport": "A fokhagymás tahini szószhoz",
+        "tetelek": [
+          "¼ csésze tahini",
+          "1 ek olívaolaj",
+          "2 ek juharszirup vagy méz",
+          "¼ csésze víz",
+          "1 ek aprított petrezselyem (elhagyható)",
+          "füstölt paprika (ízlés szerint)",
+          "fokhagymapor (ízlés szerint)",
+          "hagymapor (ízlés szerint)",
+          "1 citrom reszelt héja",
+          "2 ek citromlé",
+          "¼ tk só"
+        ]
+      }
     ],
     "lepesek": [
       "Melegítsd elő a sütőt 200 °C-ra (400 °F).",
@@ -35,7 +56,11 @@ window.RECEPTEK = [
   {
     "cim": "Édesburgonya-csónakok pekándiós-fetás-datolyás morzsával",
     "leiras": "Karamellizált szélűre sült édesburgonya sós-édes datolyás, pirított pekándiós, fetás morzsával és tahini-öntettel.",
-    "cimkek": ["vegetáriánus", "gluténmentes", "édesburgonya"],
+    "cimkek": [
+      "vegetáriánus",
+      "gluténmentes",
+      "édesburgonya"
+    ],
     "adag": "8 csónak (kb. 4 adag)",
     "forras": "@starinfinitefood",
     "forrasUrl": "",
@@ -43,16 +68,36 @@ window.RECEPTEK = [
     "video": "",
     "galeria": [],
     "hozzavalok": [
-      { "csoport": "A morzsához", "tetelek": [
-        "½ csésze nyers pekándió", "5–6 Medjool datolya, kimagozva", "kb. 55 g (½ csésze) feta sajt",
-        "egy marék rukkola", "½ tk só", "frissen őrölt fekete bors, ízlés szerint", "½ citrom reszelt héja"
-      ]},
-      { "csoport": "Az édesburgonyához", "tetelek": [
-        "4 közepes édesburgonya, hosszában félbevágva", "olívaolaj", "só, ízlés szerint"
-      ]},
-      { "csoport": "Tahini-balzsamos öntethez (elhagyható)", "tetelek": [
-        "2 ek tahini", "1 tk juharszirup", "1 tk balzsamecet", "csipet só", "1 ek víz, plusz még, amennyi kell"
-      ]}
+      {
+        "csoport": "A morzsához",
+        "tetelek": [
+          "½ csésze nyers pekándió",
+          "5–6 Medjool datolya, kimagozva",
+          "kb. 55 g (½ csésze) feta sajt",
+          "egy marék rukkola",
+          "½ tk só",
+          "frissen őrölt fekete bors, ízlés szerint",
+          "½ citrom reszelt héja"
+        ]
+      },
+      {
+        "csoport": "Az édesburgonyához",
+        "tetelek": [
+          "4 közepes édesburgonya, hosszában félbevágva",
+          "olívaolaj",
+          "só, ízlés szerint"
+        ]
+      },
+      {
+        "csoport": "Tahini-balzsamos öntethez (elhagyható)",
+        "tetelek": [
+          "2 ek tahini",
+          "1 tk juharszirup",
+          "1 tk balzsamecet",
+          "csipet só",
+          "1 ek víz, plusz még, amennyi kell"
+        ]
+      }
     ],
     "lepesek": [
       "Melegítsd elő a sütőt 220 °C-ra (425 °F).",
