@@ -12,7 +12,7 @@ window.RECEPTEK = [
     "forras": "",
     "forrasUrl": "",
     "kep": "",
-    "video": "https://www.instagram.com/p/DZAmiDtN6bz/",
+    "video": "https://www.instagram.com/reels/audio/27446636658357490?igsi=MXB2NzRjZWVza3k0dg==",
     "galeria": [],
     "hozzavalok": [
       {
@@ -51,7 +51,7 @@ window.RECEPTEK = [
       "Tedd a sült édesburgonyát tálalótányérra, locsold meg a szósszal, szórd meg zöldhagymával, és tálald."
     ],
     "megjegyzes": "A szósz mennyiség nélküli fűszereiből kb. ¼–½ tk mindegyikből jó kiindulás. Az eredetiben szereplő „pamper syrup” elírás — juharszirupot jelent.",
-    "szoveg": "Ez a rész szabadon szerkeszthető — ide írhatsz saját sztorit, tálalási ötletet vagy módosítást.\n\nPéldául: **legutóbb** csilipehellyel is megszórtam a szószt, és sokkal jobb lett. A maradék szósz salátaöntetnek is tökéletes."
+    "szoveg": "Ez a rész szabadon szerkeszthető — ide írhatsz saját sztorit, tálalási ötletet vagy módosítást.\n\nPéldául: **legutóbb** csilipehellyel is megszórtam a szószt, és sokkal jobb lett. A maradék szósz salátaöntetnek is tökéletes.\n\nAz eredeti recept ChefKLA-tól van: https://www.instagram.com/p/DZAmiDtN6bz/"
   },
   {
     "cim": "Édesburgonya-csónakok pekándiós-fetás-datolyás morzsával",
