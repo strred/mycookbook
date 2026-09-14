@@ -323,5 +323,117 @@ window.RECEPTEK = [
     ],
     "megjegyzes": "A „hasselback” technika: a tököt vékonyan, de nem teljesen átvágva szeleteld — a két oldalra tett fakanál/evőpálcika megállítja a kést. Így a szélek ropognak, a belseje krémes marad. 2 oz kecskesajt ≈ 60 g.",
     "szoveg": ""
+  },
+  {
+    "cim": "Sült káposzta tahinis-kapros öntettel és parmezános morzsával",
+    "leiras": "Ropogósra sült káposzta rukkolával, citromos tahini-kapor öntettel és pirított panko-parmezán morzsával.",
+    "cimkek": [
+      "vegetáriánus",
+      "köret"
+    ],
+    "adag": "",
+    "forras": "",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "A káposztához",
+        "tetelek": [
+          "1 kis/közepes fej káposzta, kb. 2,5 cm-es darabokra vágva",
+          "2½ ek olívaolaj",
+          "¾ tk só",
+          "½ tk bors",
+          "2 csésze aprított rukkola"
+        ]
+      },
+      {
+        "csoport": "Az öntethez",
+        "tetelek": [
+          "3 ek olívaolaj",
+          "2 ek tahini",
+          "½ citrom, magok eltávolítva",
+          "1½ tk méz",
+          "2 ek víz",
+          "2 ek friss kapor",
+          "½ tk só",
+          "¼ tk bors",
+          "1 ek kapribogyó"
+        ]
+      },
+      {
+        "csoport": "A tetejére (morzsa)",
+        "tetelek": [
+          "½ csésze pirított panko (morzsa)",
+          "½ csésze reszelt parmezán",
+          "3 ek friss aprított snidling"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Melegítsd elő a sütőt 220 °C-ra (425 °F).",
+      "Tedd a káposztát egy nagy tepsire, csorgasd meg az olívaolajjal, és fűszerezd sóval, borssal. Süsd 25–30 percig, közben párszor forgasd át — legyen aranybarna és puha. Ha kész, keverd hozzá a rukkolát.",
+      "Amíg a káposzta sül, készítsd el az öntetet. Hevíts egy serpenyőt egy kevés olívaolajjal közepes-magas lángon, és tedd bele a fél citromot vágott felével lefelé 2 percre — ez lágyítja az ízét és kiengedi a levét.",
+      "Tegyél egy edénybe olívaolajat, tahinit, kaprot, vizet, kapribogyót, mézet, sót és borsot, majd facsard bele a citrom levét. Botmixerrel turmixold simára.",
+      "Készítsd el a morzsát: keverd össze egy tálban a pankót, a parmezánt és a snidlinget.",
+      "Szedd tányérra a káposztát, szórd meg a morzsával, csorgasd meg az öntettel, és forgasd át még egyszer."
+    ],
+    "megjegyzes": "A panko japán morzsa (durvább, ropogósabb) — sima zsemlemorzsával is helyettesíthető. Bármilyen jó olívaolaj megfelel.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Csirkés cézár wrap",
+    "leiras": "A gyorséttermi wrap házi, finomabb változata: fűszeresen sült csirke, cézár-dresszing, római saláta és parmezán tortillába tekerve.",
+    "cimkek": [
+      "főétel",
+      "csirke"
+    ],
+    "adag": "6 db",
+    "forras": "Street Kitchen",
+    "forrasUrl": "https://streetkitchen.hu/receptek/csirkes-cezar-wrap",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "",
+        "tetelek": [
+          "1 db egész csirkemell (kb. 400 g)",
+          "só, bors",
+          "2 ek olaj",
+          "50 g vaj",
+          "6 db nagy tortillalap",
+          "50 g parmezán"
+        ]
+      },
+      {
+        "csoport": "A dresszinghez",
+        "tetelek": [
+          "100 g majonéz",
+          "2 db olajban eltett szardella (ajóka)",
+          "2 tk reszelt fokhagyma",
+          "2 ek frissen facsart citromlé",
+          "4 ek víz",
+          "só, bors"
+        ]
+      },
+      {
+        "csoport": "A salátához",
+        "tetelek": [
+          "300 g római saláta",
+          "1 fej lila hagyma"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Vágd a csirkemellet 4–5 szeletre, sózd, borsozd. Hevíts egy serpenyőt az olajjal, és süsd a csirkét mindkét oldalán aranybarnára, kb. 3–4 perc alatt.",
+      "Add hozzá a vajat, majd tedd a húst 200 °C-ra előmelegített sütőbe, és süsd készre 12–15 perc alatt. Vedd ki, pihentesd pár percig, majd szeleteld fel.",
+      "A dresszinghez keverd simára a majonézt, a felaprított szardellát, a reszelt fokhagymát, a citromlevet és a vizet; ízesítsd sóval, borssal.",
+      "Szeleteld vékonyra a római salátát és a lila hagymát, majd forgasd össze a dresszinggel.",
+      "Melegítsd meg a tortillalapokat (mikróban vagy serpenyőben), töltsd meg a salátával és a csirkével, szórd meg reszelt parmezánnal, tekerd fel — és már fogyaszthatod is."
+    ],
+    "megjegyzes": "Elkészítés kb. 40 perc. A szardella (ajóka) adja a cézár jellegzetes, sós-umami ízét — ha kihagyod, enyhébb lesz.",
+    "szoveg": ""
   }
 ];
