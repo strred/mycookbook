@@ -58,7 +58,7 @@
   .empty{padding:60px 4px;color:var(--ink-soft);max-width:52ch}
   .empty strong{color:var(--ink);font-weight:500}.empty a{color:var(--herb)}
   /* detail */
-  .detail,.shop{display:none}
+  #detail-view,#shop-view{display:none}
   .detail{padding:20px 0 90px}
   .back{display:inline-flex;align-items:center;gap:8px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.9rem;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px 0;margin:8px 0 26px;}
   .back:hover{color:var(--herb)}.back:focus-visible{outline:2.5px solid var(--honey);outline-offset:3px}
@@ -277,13 +277,13 @@ function megnyit(id){
 function shopRender(){
   frissitBadge();
   if(!bevasarlo.length){
-    $shopView.innerHTML=`<div class="shop"><h1>Bevásárlólista</h1><div class="empty">Még üres. Nyiss meg egy receptet, és koppints a hozzávalókra, hogy ide kerüljenek. Több receptből is gyűjthetsz egyszerre.</div></div>`;
+    $shopView.innerHTML=`<h1>Bevásárlólista</h1><div class="empty">Még üres. Nyiss meg egy receptet, és koppints a hozzávalókra, hogy ide kerüljenek. Több receptből is gyűjthetsz egyszerre.</div>`;
     return;
   }
   const groups={},order=[];
   bevasarlo.forEach(it=>{if(!groups[it.recept]){groups[it.recept]=[];order.push(it.recept);}groups[it.recept].push(it);});
   const megvett=bevasarlo.filter(x=>x.kesz).length;
-  $shopView.innerHTML=`<div class="shop">
+  $shopView.innerHTML=`
     <h1>Bevásárlólista</h1>
     <p class="shop-sub">${bevasarlo.length} tétel${megvett?` · ${megvett} megvéve`:""}</p>
     <div class="shop-controls">
@@ -297,7 +297,7 @@ function shopRender(){
         <button class="shop-remove" data-remove="${it.uid}" aria-label="Törlés">×</button>
       </div>`).join("")
     }</div>`).join("")}
-  </div>`;
+  `;
   $shopView.querySelectorAll("[data-toggle]").forEach(n=>n.onclick=()=>{
     const uid=+n.getAttribute("data-toggle");const it=bevasarlo.find(x=>x.uid===uid);
     if(it){it.kesz=!it.kesz;listaMent(bevasarlo);shopRender();}
