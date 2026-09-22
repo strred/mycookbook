@@ -435,5 +435,157 @@ window.RECEPTEK = [
     ],
     "megjegyzes": "Elkészítés kb. 40 perc. A szardella (ajóka) adja a cézár jellegzetes, sós-umami ízét — ha kihagyod, enyhébb lesz.",
     "szoveg": ""
+  },
+  {
+    "cim": "Rétegtorta (répatorta krémsajtos mázzal)",
+    "leiras": "Kétrétegű répatorta ananásszal és dióval, krémsajtos-vajas cukormázzal.",
+    "cimkek": [
+      "torta",
+      "répatorta",
+      "krémsajtos"
+    ],
+    "adag": "kb. 10-12 szelet",
+    "forras": "",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "Tészta",
+        "tetelek": [
+          "250 g finomliszt",
+          "400 g kristálycukor",
+          "1 tk sütőpor",
+          "1 tk szódabikarbóna",
+          "1 tk fahéj",
+          "0,5 tk őrölt szerecsendió",
+          "0,5 tk só",
+          "240 ml olaj",
+          "300 g reszelt répa",
+          "4 nagy tojás",
+          "225 g aprított ananász, lecsepegtetve",
+          "125 g dió vagy pekándió, durvára vágva"
+        ]
+      },
+      {
+        "csoport": "Krémsajtos máz",
+        "tetelek": [
+          "225 g krémsajt, puha",
+          "115 g vaj, puha",
+          "500 g porcukor",
+          "1 tk vaníliakivonat",
+          "1 csipet só"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Melegítsd elő a sütőt 175°C-ra. Készíts elő 2 db kb. 20 cm-es tortaformát: kikenve/kiolajozva, aljuk sütőpapírral bélelve.",
+      "Egy nagy tálban keverd össze: liszt, sütőpor, szódabikarbóna, fahéj, szerecsendió, só.",
+      "Másik tálban keverd össze az olajat, a cukrot és a tojásokat habosra.",
+      "A nedves keveréket add a szárazhoz, és éppen csak annyira keverd, hogy összeálljon.",
+      "Óvatosan forgasd bele a reszelt répát, az ananászt és a diót. Ne keverd túl.",
+      "Oszd el egyenletesen a tésztát a két formában, és süsd kb. 25-30 percig (tűpróba).",
+      "Hagyd a formában hűlni 10 percig, majd borítsd rácsra teljesen kihűlni.",
+      "Keverd habosra a krémsajtot és a vajat, majd fokozatosan add hozzá a porcukrot, a vaníliát és a csipet sót.",
+      "Az egyik lapra kend a krém felét, tedd rá a másik lapot, majd kend be a tetejét és oldalát a maradék krémmel."
+    ],
+    "megjegyzes": "Bizonytalan pontok az eredeti kézírásból — érdemes ellenőrizni: a cukor mennyisége (400g, esetleg csökkenthető 250-300g-ra ízlés szerint?); a szerecsendió és só mennyisége (0,15 vagy 0,5 tk?); a sütési idő (25-30 perc körül lehetett); az ananász mennyisége (225g?).",
+    "szoveg": ""
+  },
+  {
+    "cim": "Szardellás-diós linguine",
+    "leiras": "Fokhagymás-szardellás olívaolajas tésztaszósz dióval és parmezánnal.",
+    "cimkek": [
+      "tészta",
+      "diós",
+      "szardella",
+      "olasz"
+    ],
+    "adag": "2 adag",
+    "forras": "Street Kitchen",
+    "forrasUrl": "https://streetkitchen.hu/receptek/szardellas-dios-linguine",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "",
+        "tetelek": [
+          "8 gerezd fokhagyma",
+          "6 ek extraszűz olívaolaj",
+          "250 g linguine száraztészta",
+          "1 db piros chilipaprika",
+          "10 db szardellafilé (olajban eltett)",
+          "50 g dió, durvára törve",
+          "só, bors",
+          "1 csokor petrezselyem",
+          "50 g parmezán"
+        ]
+      }
+    ],
+    "lepesek": [
+      "A kés lapjával megtört, durvára vágott fokhagymát tedd egy kis edénybe az olívaolajjal, és nagyon alacsony lángon, kb. 5 perc alatt süsd aranybarnára, krémes állagúra — ügyelj, hogy ne piruljon meg és ne száradjon ki. Szűrd le, az olajat és a fokhagymát tedd félre.",
+      "Forralj sós vizet, és főzd a tésztát al dentére a csomagoláson jelzett idő alatt. Szűrd le, a főzőléből tegyél félre kb. 100 ml-t.",
+      "Egy szélesebb serpenyőben hevíts fel 3 evőkanál leszűrt fokhagymás olajat, add hozzá a kimagozott, apróra vágott chilit, a leszűrt fokhagymát és a szardellát. Pirítsd, amíg a szardella szét nem esik.",
+      "Add hozzá a dió felét és 4-5 evőkanál tésztafőzőlevet, és főzd még 2-3 percig. Sózd, borsozd ízlés szerint.",
+      "Forgasd bele a leszűrt tésztát a mártásba. Ha kell, adj hozzá még a főzőléből egy krémesebb állagért. Szórd meg finomra vágott petrezselyemmel, és alaposan keverd át.",
+      "Tálald a maradék dióval, parmezánforgáccsal és néhány petrezselyemlevéllel megszórva."
+    ],
+    "megjegyzes": "Elkészítési idő: kb. 30 perc.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Mézes-fokhagymás csirke tejszínes parmezános spagettivel",
+    "leiras": "Mézes-szójaszószos, fokhagymás-chilis pirított csirke tejszínes-parmezános spagettivel.",
+    "cimkek": [
+      "csirke",
+      "tészta",
+      "mézes",
+      "fokhagymás"
+    ],
+    "adag": "",
+    "forras": "",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "Csirkéhez",
+        "tetelek": [
+          "400 g csirkemell",
+          "só, bors",
+          "2 ek liszt",
+          "növényi olaj (sütéshez)",
+          "3 ek méz",
+          "2 ek szójaszósz",
+          "2-3 gerezd fokhagyma, apróra vágva",
+          "frissen őrölt bors",
+          "1 db chili (vagy chilipehely, ízlés szerint)"
+        ]
+      },
+      {
+        "csoport": "Spagettihez",
+        "tetelek": [
+          "300 g spagetti",
+          "1 ek vaj",
+          "só, bors",
+          "50 g reszelt parmezán",
+          "150 ml tejszín"
+        ]
+      }
+    ],
+    "lepesek": [
+      "A csirkemellet vágd apró darabokra, sózd, borsozd, majd forgasd lisztbe.",
+      "Forró serpenyőben, olajon pirítsd aranybarnára.",
+      "Egy külön tálban keverd össze a mézet, a szójaszószt, a fokhagymát, a borsot és a chilit.",
+      "Öntsd a szószt a csirkéhez, keverd össze, és párold 2-3 percig, amíg a hús felszívja.",
+      "A spagettit főzd ki al dentére a csomagolás szerint, majd szűrd le.",
+      "Ízlés szerint add hozzá a vajat, sót, borsot, majd keverd bele a parmezánt és a tejszínt.",
+      "Forgasd össze a lecsepegtetett spagettit a tejszínes-parmezános szósszal."
+    ],
+    "megjegyzes": "A hozzávalók mennyiségei becsültek, mert az eredeti forrás csak az elkészítést adta meg pontos mennyiségek nélkül — érdemes ízlés szerint pontosítani.",
+    "szoveg": ""
   }
 ];
