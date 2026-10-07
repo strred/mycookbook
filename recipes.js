@@ -437,74 +437,15 @@ window.RECEPTEK = [
     "szoveg": ""
   },
   {
-    "cim": "Rétegtorta (répatorta krémsajtos mázzal)",
-    "leiras": "Kétrétegű répatorta ananásszal és dióval, krémsajtos-vajas cukormázzal.",
+    "cim": "Réteges leveles tésztás melegszendvics (panwich)",
+    "leiras": "Két lap leveles tészta közé rétegezett felvágott, három sajt, fűszeres morzsa és dijoni-majonézes krém, ropogósra sütve.",
     "cimkek": [
-      "torta",
-      "répatorta",
-      "krémsajtos"
+      "főétel",
+      "sajtos"
     ],
-    "adag": "kb. 10-12 szelet",
-    "forras": "",
+    "adag": "",
+    "forras": "@mikecasacomedy",
     "forrasUrl": "",
-    "kep": "",
-    "video": "",
-    "galeria": [],
-    "hozzavalok": [
-      {
-        "csoport": "Tészta",
-        "tetelek": [
-          "250 g finomliszt",
-          "400 g kristálycukor",
-          "1 tk sütőpor",
-          "1 tk szódabikarbóna",
-          "1 tk fahéj",
-          "0,5 tk őrölt szerecsendió",
-          "0,5 tk só",
-          "240 ml olaj",
-          "300 g reszelt répa",
-          "4 nagy tojás",
-          "225 g aprított ananász, lecsepegtetve",
-          "125 g dió vagy pekándió, durvára vágva"
-        ]
-      },
-      {
-        "csoport": "Krémsajtos máz",
-        "tetelek": [
-          "225 g krémsajt, puha",
-          "115 g vaj, puha",
-          "500 g porcukor",
-          "1 tk vaníliakivonat",
-          "1 csipet só"
-        ]
-      }
-    ],
-    "lepesek": [
-      "Melegítsd elő a sütőt 175°C-ra. Készíts elő 2 db kb. 20 cm-es tortaformát: kikenve/kiolajozva, aljuk sütőpapírral bélelve.",
-      "Egy nagy tálban keverd össze: liszt, sütőpor, szódabikarbóna, fahéj, szerecsendió, só.",
-      "Másik tálban keverd össze az olajat, a cukrot és a tojásokat habosra.",
-      "A nedves keveréket add a szárazhoz, és éppen csak annyira keverd, hogy összeálljon.",
-      "Óvatosan forgasd bele a reszelt répát, az ananászt és a diót. Ne keverd túl.",
-      "Oszd el egyenletesen a tésztát a két formában, és süsd kb. 25-30 percig (tűpróba).",
-      "Hagyd a formában hűlni 10 percig, majd borítsd rácsra teljesen kihűlni.",
-      "Keverd habosra a krémsajtot és a vajat, majd fokozatosan add hozzá a porcukrot, a vaníliát és a csipet sót.",
-      "Az egyik lapra kend a krém felét, tedd rá a másik lapot, majd kend be a tetejét és oldalát a maradék krémmel."
-    ],
-    "megjegyzes": "Bizonytalan pontok az eredeti kézírásból — érdemes ellenőrizni: a cukor mennyisége (400g, esetleg csökkenthető 250-300g-ra ízlés szerint?); a szerecsendió és só mennyisége (0,15 vagy 0,5 tk?); a sütési idő (25-30 perc körül lehetett); az ananász mennyisége (225g?).",
-    "szoveg": ""
-  },
-  {
-    "cim": "Szardellás-diós linguine",
-    "leiras": "Fokhagymás-szardellás olívaolajas tésztaszósz dióval és parmezánnal.",
-    "cimkek": [
-      "tészta",
-      "diós",
-      "szardella",
-      "olasz"
-    ],
-    "adag": "2 adag",
-    "forras": "Street Kitchen",
-    "forrasUrl": "https://streetkitchen.hu/receptek/szardellas-dios-linguine",
     "kep": "",
     "video": "",
     "galeria": [],
@@ -512,39 +453,105 @@ window.RECEPTEK = [
       {
         "csoport": "",
         "tetelek": [
-          "8 gerezd fokhagyma",
-          "6 ek extraszűz olívaolaj",
-          "250 g linguine száraztészta",
-          "1 db piros chilipaprika",
-          "10 db szardellafilé (olajban eltett)",
-          "50 g dió, durvára törve",
-          "só, bors",
-          "1 csokor petrezselyem",
-          "50 g parmezán"
+          "2 lap leveles tészta (kiolvasztva)",
+          "1 csésze reszelt mozzarella",
+          "1½ csésze reszelt gruyère vagy ementáli",
+          "½ csésze reszelt parmezán",
+          "45–70 dkg szeletelt felvágott (tetszőleges)",
+          "½ csésze zsemlemorzsa",
+          "2 ek friss vagy szárított petrezselyem",
+          "1 ek fokhagymapor",
+          "1 ek hagymapor",
+          "só, bors ízlés szerint"
+        ]
+      },
+      {
+        "csoport": "A krémhez",
+        "tetelek": [
+          "½ csésze dijoni mustár",
+          "½ csésze majonéz",
+          "½ tk só",
+          "½ tk őrölt fekete bors"
+        ]
+      },
+      {
+        "csoport": "A kenéshez",
+        "tetelek": [
+          "1 egész tojás + ¼ csésze tejszín vagy tej (tojásos kenőmassza)"
         ]
       }
     ],
     "lepesek": [
-      "A kés lapjával megtört, durvára vágott fokhagymát tedd egy kis edénybe az olívaolajjal, és nagyon alacsony lángon, kb. 5 perc alatt süsd aranybarnára, krémes állagúra — ügyelj, hogy ne piruljon meg és ne száradjon ki. Szűrd le, az olajat és a fokhagymát tedd félre.",
-      "Forralj sós vizet, és főzd a tésztát al dentére a csomagoláson jelzett idő alatt. Szűrd le, a főzőléből tegyél félre kb. 100 ml-t.",
-      "Egy szélesebb serpenyőben hevíts fel 3 evőkanál leszűrt fokhagymás olajat, add hozzá a kimagozott, apróra vágott chilit, a leszűrt fokhagymát és a szardellát. Pirítsd, amíg a szardella szét nem esik.",
-      "Add hozzá a dió felét és 4-5 evőkanál tésztafőzőlevet, és főzd még 2-3 percig. Sózd, borsozd ízlés szerint.",
-      "Forgasd bele a leszűrt tésztát a mártásba. Ha kell, adj hozzá még a főzőléből egy krémesebb állagért. Szórd meg finomra vágott petrezselyemmel, és alaposan keverd át.",
-      "Tálald a maradék dióval, parmezánforgáccsal és néhány petrezselyemlevéllel megszórva."
+      "Olvaszd ki a leveles tésztát a csomagolás szerint. Terítsd sütőpapírra, lisztezd meg, nyújtsd ki, és tedd tepsire. Szurkáld meg villával, és süsd 180 °C-on (360 °F) 15 percig. Vedd ki, és tedd félre.",
+      "Egy tálban keverd össze a mozzarellát, a gruyère-t, a parmezánt, a zsemlemorzsát, a hagymaport, a fokhagymaport, a petrezselymet, a sót és a borsot. Tedd félre.",
+      "Készítsd el a krémet: keverd simára a majonézt, a dijoni mustárt, a sót és a borsot.",
+      "Összeállítás: kend meg a félig sült leveles tésztát a dijoni-majonézes krémmel. Szórd rá a sajtos-morzsás keverék felét, majd a felvágottat, még egy réteg krémet, végül a maradék sajtos-morzsás keveréket. Fedd le a másik lap leveles tésztával, és villával nyomkodd le a széleit, hogy záródjon.",
+      "Keverd el a tojást a tejszínnel/tejjel és egy csipet sóval, és kend meg vele a tetejét. Süsd 200 °C-on (400 °F) 25–30 percig. Pihentesd 10 percet, szeleteld fel, és tálald."
     ],
-    "megjegyzes": "Elkészítési idő: kb. 30 perc.",
+    "megjegyzes": "Az eredeti amerikai mértékegységekkel dolgozik; a °F-értékek mellett zárójelben a °C. A felvágott bármilyen lehet (sonka, pulyka, szalámi).",
     "szoveg": ""
   },
   {
-    "cim": "Mézes-fokhagymás csirke tejszínes parmezános spagettivel",
-    "leiras": "Mézes-szójaszószos, fokhagymás-chilis pirított csirke tejszínes-parmezános spagettivel.",
+    "cim": "Mangó-misó mázas lazacos tál",
+    "leiras": "Mangó-misó mázzal sült lazac párolt rizzsel és ropogós, thai stílusú mangós-káposztás salátával.",
     "cimkek": [
-      "csirke",
-      "tészta",
-      "mézes",
-      "fokhagymás"
+      "főétel",
+      "hal"
     ],
-    "adag": "",
+    "adag": "kb. 4 adag",
+    "forras": "@dishingouthealth",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "Mangó-misó szószhoz",
+        "tetelek": [
+          "½ csésze érett mangó, kockázva",
+          "¼ csésze friss lime-lé",
+          "¼ csésze avokádóolaj",
+          "2 tk fehér miszópaszta",
+          "2 tk méz",
+          "1 db kb. 1,5 cm-es friss gyömbér"
+        ]
+      },
+      {
+        "csoport": "A tálhoz",
+        "tetelek": [
+          "kb. 570 g (1,25 lb) lazacfilé (középső részből)",
+          "2 ek friss lime-lé",
+          "2 tk halszósz",
+          "1 gerezd fokhagyma",
+          "1 db thai chili (bird’s eye)",
+          "½ csésze vékonyra szeletelt lila hagyma",
+          "2 csésze gyalult lila káposzta",
+          "1 csésze friss mangó, csíkokra vágva",
+          "½ csésze friss koriander (levél és zsenge szár)",
+          "¼ csésze friss menta vagy thai bazsalikom",
+          "¼ csésze pirított földimogyoró vagy kesudió",
+          "főtt fehér rizs a tálaláshoz"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Készítsd el a mangó-misó szószt: turmixold simára a mangót, a lime-levet, az avokádóolajat, a miszót, a mézet és a reszelt gyömbért.",
+      "A szósz felével pácold be a lazacot kb. 15–20 percre; a másik felét tedd félre tálaláshoz.",
+      "Süsd vagy grillezd a lazacot, amíg a máz karamellizálódik és a hal éppen átsül (kb. 200 °C-on 10–12 perc, vagy forró serpenyőben/grillen).",
+      "Készítsd el a salátát: keverd össze a lila káposztát, a lila hagymát, a csíkozott mangót, a koriandert és a mentát; ízesítsd a 2 ek lime-lével, a halszósszal, a zúzott fokhagymával és az aprított chilivel.",
+      "Tálald: alulra rizs, rá a saláta és a lazac, meglocsolva a félretett szósszal, megszórva a pirított mogyoróval/kesudióval."
+    ],
+    "megjegyzes": "Az elkészítés lépései nem voltak a képen — a leírás alapján rekonstruáltam, érdemes az eredetivel összevetni. A miszó és a halszósz eleve sós, ezért óvatosan a plusz sóval.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Ropogós rizses saláta tofuval és mogyorószósszal",
+    "leiras": "Sütőben ropogósra sült barna rizs és reszelt tofu edamaméval, uborkával, friss korianderrel és krémes mogyorószósszal.",
+    "cimkek": [
+      "vegetáriánus",
+      "saláta"
+    ],
+    "adag": "2 adag",
     "forras": "",
     "forrasUrl": "",
     "kep": "",
@@ -552,40 +559,362 @@ window.RECEPTEK = [
     "galeria": [],
     "hozzavalok": [
       {
-        "csoport": "Csirkéhez",
+        "csoport": "",
         "tetelek": [
-          "400 g csirkemell",
-          "só, bors",
-          "2 ek liszt",
-          "növényi olaj (sütéshez)",
-          "3 ek méz",
-          "2 ek szójaszósz",
-          "2-3 gerezd fokhagyma, apróra vágva",
-          "frissen őrölt bors",
-          "1 db chili (vagy chilipehely, ízlés szerint)"
+          "½ csésze edamame bab",
+          "½ uborka (vagy 1 kis uborka)",
+          "egy nagy marék friss koriander",
+          "2 újhagyma",
+          "¼ csésze aprított földimogyoró"
         ]
       },
       {
-        "csoport": "Spagettihez",
+        "csoport": "A ropogós rizshez",
         "tetelek": [
-          "300 g spagetti",
-          "1 ek vaj",
-          "só, bors",
-          "50 g reszelt parmezán",
-          "150 ml tejszín"
+          "250 g főtt rizs (pl. barna basmati)",
+          "1 ek szójaszósz",
+          "1 tk chiliolaj"
+        ]
+      },
+      {
+        "csoport": "A tofuhoz",
+        "tetelek": [
+          "½ csomag tofu, lereszelve",
+          "1 tk szójaszósz",
+          "1 tk olívaolaj",
+          "½ tk fokhagymapor"
+        ]
+      },
+      {
+        "csoport": "A mogyorószószhoz",
+        "tetelek": [
+          "¼ csésze mogyoróvaj",
+          "1 ek szójaszósz",
+          "½ tk juharszirup",
+          "½ ek szezámolaj",
+          "víz a hígításhoz"
         ]
       }
     ],
     "lepesek": [
-      "A csirkemellet vágd apró darabokra, sózd, borsozd, majd forgasd lisztbe.",
-      "Forró serpenyőben, olajon pirítsd aranybarnára.",
-      "Egy külön tálban keverd össze a mézet, a szójaszószt, a fokhagymát, a borsot és a chilit.",
-      "Öntsd a szószt a csirkéhez, keverd össze, és párold 2-3 percig, amíg a hús felszívja.",
-      "A spagettit főzd ki al dentére a csomagolás szerint, majd szűrd le.",
-      "Ízlés szerint add hozzá a vajat, sót, borsot, majd keverd bele a parmezánt és a tejszínt.",
-      "Forgasd össze a lecsepegtetett spagettit a tejszínes-parmezános szósszal."
+      "Melegítsd elő a sütőt 180 °C-ra (légkeveréses 160). Bélelj ki 2 tepsit sütőpapírral.",
+      "Reszeld le a tofut (nagylyukú reszelőn) egy tálba, add hozzá a fűszereket és az olajat, keverd el, majd terítsd egyenletesen az egyik tepsire.",
+      "A főtt rizst terítsd egyenletesen a másik tepsire, és keverd el a szójaszósszal és a chiliolajjal. Süsd a tofut 15–20 percig, a rizst 20–25 percig, amíg ropogós lesz.",
+      "Közben vágd apróra az uborkát és az újhagymát; aprítsd fel a koriandert és a földimogyorót.",
+      "Készítsd el a mogyorószószt: keverd simára a hozzávalókat, és vízzel hígítsd a kívánt állagra.",
+      "Állítsd össze a salátát: keverd össze a tofut, a ropogós rizst, a zöldségeket és a mogyorót. Csorgasd rá a mogyorószószt, és forgasd össze."
     ],
-    "megjegyzes": "A hozzávalók mennyiségei becsültek, mert az eredeti forrás csak az elkészítést adta meg pontos mennyiségek nélkül — érdemes ízlés szerint pontosítani.",
+    "megjegyzes": "Vegán és magas fehérjetartalmú.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Magyaros gombaleves",
+    "leiras": "Klasszikus, menzás magyaros gombaleves füstölt szalonnával, csiperkével, fűszerpaprikával és vajas galuskával.",
+    "cimkek": [
+      "leves",
+      "magyaros"
+    ],
+    "adag": "4 adag",
+    "forras": "Street Kitchen",
+    "forrasUrl": "https://streetkitchen.hu/receptek/magyaros-gombaleves",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "",
+        "tetelek": [
+          "1 ek zsír",
+          "100 g füstölt szalonna",
+          "2 fej vöröshagyma (kb. 100 g/fej)",
+          "6 gerezd fokhagyma",
+          "½ db tv-paprika (kb. 120 g)",
+          "1 db paradicsom (kb. 100 g)",
+          "1 szál sárgarépa (kb. 160 g)",
+          "1 szál fehérrépa/petrezselyemgyökér (kb. 160 g)",
+          "500 g csiperkegomba",
+          "1 ek fűszerpaprika",
+          "1 ek majoránna",
+          "2 db babérlevél",
+          "só, bors",
+          "2 l alaplé vagy víz",
+          "200 g tejföl",
+          "1 csokor petrezselyem"
+        ]
+      },
+      {
+        "csoport": "A vajas galuskához",
+        "tetelek": [
+          "25 g vaj",
+          "1 db tojás",
+          "100 g finomliszt"
+        ]
+      },
+      {
+        "csoport": "A tálaláshoz",
+        "tetelek": [
+          "2 ek tejföl",
+          "1 csokor petrezselyem"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Egy fazékban, közepes lángon pirítsd meg a zsíron a 0,5 cm-es csíkokra vágott szalonnát. Add hozzá a finomra vágott vörös- és fokhagymát, és pirítsd együtt 2–3 percig.",
+      "Add hozzá a 0,5 cm-es kockára vágott paprikát és paradicsomot, pirítsd tovább kb. 5 percig. Ezután jöhet a félkarikára vágott sárgarépa és fehérrépa, valamint a szeletelt gomba — pirítsd az alapot még 5 percig.",
+      "Fűszerezd a fűszerpaprikával és a majoránnával, dobd bele a babérlevelet, sózd, borsozd, majd öntsd fel az alaplével vagy vízzel. Kb. 20 perc alatt főzd puhára a zöldségeket.",
+      "Keverd ki a tejfölt a finomra vágott petrezselyemmel és 2 merőkanál forró levessel, majd öntsd vissza a levesbe (így nem csapódik ki).",
+      "Készítsd el a vajas galuskát: olvaszd meg a vajat, keverd ki a tojással, a liszttel és egy kevés vízzel galuskaállagúra. Kiskanállal szaggass galuskákat a forró levesbe, és főzd 3–4 perc alatt.",
+      "Szedd tányérokba, locsold meg tejföllel, és szórd meg finomra vágott petrezselyemmel."
+    ],
+    "megjegyzes": "Elkészítés kb. 45 perc. Vega verzióhoz hagyd el a szalonnát, és víz helyett zöldségalaplével főzd.",
+    "szoveg": ""
+  },
+  {
+    "cim": "White chicken chili (fehér csirkés chili)",
+    "leiras": "Krémes, egyfazekas fehér csirkés chili cannellini babbal, kukoricával, zöld chilivel és sajttal — kb. 1 óra alatt.",
+    "cimkek": [
+      "főétel",
+      "leves",
+      "csirke"
+    ],
+    "adag": "6 adag",
+    "forras": "Julia’s Album",
+    "forrasUrl": "https://juliasalbum.com/white-chicken-chili/",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "",
+        "tetelek": [
+          "2 ek olívaolaj",
+          "1 közepes sárga hagyma, kockázva",
+          "1 zöld kaliforniai paprika, aprítva",
+          "1 jalapeño, kimagozva és aprítva",
+          "3 gerezd fokhagyma, aprítva",
+          "1½ tk őrölt kömény (cumin)",
+          "1 tk szárított oregánó",
+          "¾ tk füstölt paprika",
+          "½ tk chilipor",
+          "só, bors ízlés szerint",
+          "4 csésze (kb. 1 l) csökkentett sótartalmú csirkealaplé",
+          "kb. 850 g (2×400 g konzerv) cannellini bab, leszűrve, leöblítve",
+          "kb. 185 g aprított zöld chili (konzerv)",
+          "2½ csésze sült csirke (rotisserie), cafatokra tépve, bőr nélkül",
+          "1 csésze fagyasztott kukorica",
+          "110 g krémsajt, szobahőmérsékletű",
+          "½ csésze reszelt Pepper Jack sajt",
+          "⅓ csésze tejföl, szobahőmérsékletű"
+        ]
+      },
+      {
+        "csoport": "A tetejére",
+        "tetelek": [
+          "¼ csésze friss koriander, aprítva",
+          "¼ csésze finomra reszelt Pepper Jack sajt",
+          "1 avokádó, vékonyra szeletelve",
+          "1 jalapeño, szeletelve"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Egy nagy fazékban vagy öntöttvas lábasban hevítsd az olívaolajat közepes lángon. Add hozzá a hagymát, a paprikát és a jalapeñót, és pároljad kb. 3–4 percig, amíg megpuhulnak. Add hozzá a fokhagymát, süsd 30–60 másodpercig, majd keverd bele a köményt, az oregánót, a füstölt paprikát, a chiliport, sót és borsot.",
+      "Turmixolj simára ½ csésze alaplevet 1 csésze babbal — ettől lesz sűrű és krémes liszt nélkül. Öntsd a fazékba a maradék alaplével, a maradék babbal és a zöld chilivel együtt. Forrald fel, és fedő nélkül főzd kb. 15 percig, időnként kevergetve.",
+      "Add hozzá a csirkét, a kukoricát és a krémsajtot. Főzd további 5–10 percig, amíg a csirke és a kukorica átmelegszik, és a krémsajt elolvad.",
+      "Vedd le a tűzről, és keverd bele a Pepper Jack sajtot és a tejfölt, amíg elolvad és jól elkeveredik (így nem csapódik ki).",
+      "Tálald avokádószeletekkel, reszelt Pepper Jack sajttal, szeletelt jalapeñóval és friss korianderrel."
+    ],
+    "megjegyzes": "Előkészítés 15 perc, főzés 35 perc. Kb. 656 kcal/adag (a forrás szerint). A krémsajt-tejföl miatt fagyasztás után szétválhat — fagyasztáshoz hagyd ki a tejfölt. Lassú főzőben (slow cooker) is elkészíthető.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Sült fűszeres vajbab, karfiol és hagyma harissás-tahinis joghurton",
+    "leiras": "Ropogósra sült fűszeres vajbab, karfiol és lila hagyma krémes harissás-tahinis joghurton, gránátalmával és friss fűszernövényekkel.",
+    "cimkek": [
+      "vegán",
+      "vegetáriánus",
+      "főétel"
+    ],
+    "adag": "2 adag",
+    "forras": "@tessbegg",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "Harissás-tahinis joghurt",
+        "tetelek": [
+          "1 csésze natúr kókusz- vagy szójajoghurt (görög stílusú a legjobb)",
+          "1 ek harissa paszta (több, ha csípősen szereted)",
+          "2 ek hámozott (hulled) tahini",
+          "csipet só",
+          "½ citrom leve",
+          "1 tk fokhagymapor"
+        ]
+      },
+      {
+        "csoport": "Karfiol és vajbab",
+        "tetelek": [
+          "1 közepes fej karfiol, rózsákra szedve",
+          "1 lila hagyma, kis darabokra vágva",
+          "420 g konzerv vajbab, leszűrve, leöblítve, szárazra törölve (főtt, nem nyers)",
+          "olívaolaj a bevonáshoz",
+          "2 tk édesnemes paprika",
+          "1 tk őrölt kömény (cumin)",
+          "1 tk hagymapor",
+          "1 tk fokhagymapor",
+          "2 tk szárított petrezselyem",
+          "bőséges csipet só és fekete bors"
+        ]
+      },
+      {
+        "csoport": "A tetejére",
+        "tetelek": [
+          "petrezselyem",
+          "menta",
+          "gránátalma",
+          "szezámmag"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Melegítsd elő a sütőt 200 °C-ra (400 °F). Keverd össze a fűszereket egy tálban.",
+      "Tedd a vajbabot, a karfiolt és a hagymát a tepsire (sütőpapírral bélelve, ha nem tapadásmentes). Csorgasd meg olívaolajjal, szórd rá a fűszerkeveréket, és forgasd össze. Süsd kb. 40 percig, amíg enyhén aranybarna; a 30. perc körül forgasd át.",
+      "Amíg sül, keverd össze egy tálban a joghurtos szósz hozzávalóit.",
+      "Kend a joghurtot a tálak aljára, tedd rá a sült zöldséget és a vajbabot. Szórd meg szezámmaggal, gránátalmával, petrezselyemmel és mentával."
+    ],
+    "megjegyzes": "Vegán, növényközpontú. Csípősebbre a harissát növeld.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Karfiolsuflé",
+    "leiras": "",
+    "cimkek": [
+      "vegetáriánus"
+    ],
+    "adag": "",
+    "forras": "",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "https://www.instagram.com/reel/DdzNqfnNoXM/",
+    "galeria": [],
+    "hozzavalok": [],
+    "lepesek": [],
+    "megjegyzes": "",
+    "szoveg": ""
+  },
+  {
+    "cim": "Karamellizált édesburgonya és cékla kecskesajtos joghurtkrémen",
+    "leiras": "Rozmaringgal sült, karamellás szélű édesburgonya és cékla selymes, kecskesajtos joghurtkrémen, csicseriborsóval és citromos-mézes-tahinis öntettel.",
+    "cimkek": [
+      "vegetáriánus",
+      "főétel",
+      "édesburgonya"
+    ],
+    "adag": "",
+    "forras": "@starinfinitefood",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "https://www.instagram.com/reel/Dd7Eip5JjxT/",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "A krémhez (whip)",
+        "tetelek": [
+          "¾ csésze natúr görög joghurt",
+          "60 g (2 oz) kecskesajt, szobahőmérsékletűre lágyítva",
+          "egy nagy csipet / kiadós citromlé",
+          "só ízlés szerint",
+          "1 ek méz"
+        ]
+      },
+      {
+        "csoport": "A zöldségekhez",
+        "tetelek": [
+          "kb. 450 g (1 lb) édesburgonya, hámozva, felkockázva",
+          "kb. 450 g (1 lb) cékla, hámozva, felkockázva",
+          "3 ek avokádóolaj, elosztva",
+          "1½ tk só, elosztva",
+          "bors ízlés szerint",
+          "4 ág friss rozmaring",
+          "1 konzerv (kb. 400 g / 15 oz) csicseriborsó, leöblítve, leszűrve",
+          "½ ek méz",
+          "1 tk paprika",
+          "½ tk fokhagymapor",
+          "1 csésze rukkola, aprítva",
+          "tökmag (pepita), elhagyható a tetejére",
+          "extra kecskesajt-morzsa, elhagyható"
+        ]
+      },
+      {
+        "csoport": "Az öntethez (drizzle)",
+        "tetelek": [
+          "2 ek tahini",
+          "2 ek citromlé",
+          "2 ek olívaolaj",
+          "2 ek méz",
+          "só és bors ízlés szerint"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Melegítsd elő a sütőt 220 °C-ra (425 °F). Bélelj ki egy tepsit sütőpapírral.",
+      "Tedd az édesburgonyát és a céklát a tepsire, egymástól külön oldalra. Csorgasd meg 2½ ek avokádóolajjal, sózd, borsozd. Forgasd át külön-külön, tűzd a rozmaringágakat a zöldségek közé, és süsd 35–40 percig, amíg villapuha; félidőben forgasd át.",
+      "A csicseriborsót tedd külön kis tepsire, és szárítsd a sütőben 10 percig. Vedd ki, add hozzá a ½ ek avokádóolajat, ½ ek mézet, ½ tk sót, a paprikát és a fokhagymaport. Forgasd át, és pirítsd további 10–12 percig.",
+      "A krémhez tedd egy tálba a joghurtot, a kecskesajtot, a citromlevet, 1 ek mézet és sót ízlés szerint. Keverd/habverd simára.",
+      "Az öntethez keverd simára a tahinit, az olívaolajat, a mézet, sót és borsot (és a citromlevet).",
+      "Vedd ki a rozmaringágakat a tepsiből. Add a rukkolát az édesburgonyához és a céklához, és forgasd össze.",
+      "Kend a kecskesajtos joghurtkrémet egy tányérra, tedd rá a zöldségeket és a csicseriborsót, csorgasd meg az öntettel, és szórd meg tökmaggal és extra kecskesajttal."
+    ],
+    "megjegyzes": "Az eredeti a La Tourangelle avokádó- és olívaolaját használja; bármilyen jó minőségű olaj megfelel.",
+    "szoveg": ""
+  },
+  {
+    "cim": "Sült édesburgonya burratával, paradicsommal és buggyantott tojással",
+    "leiras": "Puhára sült édesburgonya krémes burratával, szaftos sült koktélparadicsommal, avokádóval és buggyantott tojással — minden összeolvad.",
+    "cimkek": [
+      "vegetáriánus",
+      "főétel",
+      "édesburgonya"
+    ],
+    "adag": "",
+    "forras": "",
+    "forrasUrl": "",
+    "kep": "",
+    "video": "https://www.instagram.com/reel/DcV5vP6slyr/",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "",
+        "tetelek": [
+          "édesburgonya"
+        ]
+      },
+      {
+        "csoport": "A tetejére",
+        "tetelek": [
+          "burrata",
+          "10 koktélparadicsom",
+          "3 gerezd fokhagyma",
+          "olívaolaj",
+          "só, bors",
+          "½ avokádó",
+          "1 buggyantott (poached) tojás",
+          "chiliolaj"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Süsd az édesburgonyát egészben, héjastul 180 °C-on kb. 1 órát, amíg megpuhul.",
+      "Egy kis sütőtálban, 180 °C-on kb. 20 percig süsd a koktélparadicsomot olívaolajjal, fokhagymával, sóval és borssal, amíg megpuhul és szaftos lesz.",
+      "Vágd fel az édesburgonyát, és óvatosan nyomd szét.",
+      "Tedd rá a burratát, és nyisd szét, hogy beleolvadjon az édesburgonyába.",
+      "Halmozd rá a sült paradicsomot a szaftjával együtt.",
+      "Tedd rá a szeletelt avokádót és a buggyantott tojást.",
+      "Fejezd be chiliolajjal és a paradicsom szaftjának egy kevésével meglocsolva."
+    ],
+    "megjegyzes": "",
     "szoveg": ""
   }
 ];
