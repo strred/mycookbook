@@ -916,5 +916,60 @@ window.RECEPTEK = [
     ],
     "megjegyzes": "",
     "szoveg": ""
+  },
+  {
+    "cim": "Sült honeynut tökös-fetás krém mézes pekándióval és sült zsályával",
+    "leiras": "Édes-sós, krémes mártogatós sült tökből és fetából, tetején csípős-mézes pekándióval és ropogósra sült zsályalevelekkel. Ünnepi előétel.",
+    "cimkek": [
+      "vegetáriánus",
+      "előétel",
+      "sajtos"
+    ],
+    "adag": "8–10 adag",
+    "forras": "The Original Dish",
+    "forrasUrl": "https://www.theoriginaldish.com/2022/11/09/roasted-honeynut-squash-feta-dip/",
+    "kep": "",
+    "video": "",
+    "galeria": [],
+    "hozzavalok": [
+      {
+        "csoport": "A krémhez",
+        "tetelek": [
+          "kb. 570 g honeynut tök (vagy kisebb vajtök), hosszában félbevágva, kimagozva",
+          "olívaolaj (a sütéshez)",
+          "só",
+          "kb. 225 g feta, morzsolva",
+          "¼ csésze (kb. 60 ml) olívaolaj",
+          "1 ek méz",
+          "¼ csésze (kb. 60 ml) víz"
+        ]
+      },
+      {
+        "csoport": "A tetejére",
+        "tetelek": [
+          "¼ csésze (kb. 60 ml) olívaolaj (a sütéshez)",
+          "12 zsályalevél",
+          "1 piros Fresno chili (vagy más enyhén csípős piros chili), kimagozva, vékonyra szeletelve",
+          "½ csésze aprított pekándió",
+          "2 ek méz",
+          "frissen őrölt fekete bors"
+        ]
+      },
+      {
+        "csoport": "Tálaláshoz",
+        "tetelek": [
+          "pirított kenyér vagy keksz"
+        ]
+      }
+    ],
+    "lepesek": [
+      "Melegítsd elő a sütőt 220 °C-ra (425 °F). Dörzsöld be a tökfeleket olívaolajjal és egy jó csipet sóval, tedd vágott felükkel lefelé egy tepsire, és süsd kb. 40 percig, amíg megpuhul. Hagyd szobahőmérsékletűre hűlni.",
+      "Kanalazd ki a tök húsát (a héjat dobd ki), és tedd aprítógépbe a fetával, ¼ csésze olívaolajjal és 1 ek mézzel. Pulzálva keverd össze, majd járatás közben lassan csorgasd hozzá a vizet, és turmixold simára.",
+      "Egy nagy (kb. 30 cm-es) serpenyőben, közepes lángon hevítsd fel a ¼ csésze olívaolajat. Süsd benne a zsályaleveleket 1–2 percig, amíg ropogósak lesznek, majd szűrőkanállal szedd papírtörlőre.",
+      "Vedd lejjebb a lángot közepes-alacsonyra. Tedd a chiliszeleteket ugyanabba az olajba, és 1–2 perc alatt párold puhára. Add hozzá a pekándiót, és pirítsd rövid ideig, amíg illatos lesz. Keverd bele a 2 ek mézet, és kb. 1 percig főzd, amíg kissé besűrűsödik. Zárd el a tüzet.",
+      "Kend a krémet egy lapos tálba, borsozd meg. Kanalazd rá a mézes pekándiós feltétet, szórd meg a sült zsályával, és pirított kenyérrel vagy keksszel tálald."
+    ],
+    "megjegyzes": "Honeynut tök helyett kisebb vajtök (butternut) is jó. Előre elkészíthető: a krém hűtőben tárolható, a pekándiós feltétet pedig tálalás előtt melegítsd újra.",
+    "szoveg": ""
   }
 ];
